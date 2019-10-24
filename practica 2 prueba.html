@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="UTF-8">
+       <title>Practica 2 prueba </title>
+   </head>
+   <body>
+        <h2>CALCULO MAYORIA DE EDAD</h2>
+        <p>Fecha Nacimiento: <input type="date" id="fecha"/>
+        <button type="button" onclick="calcularEdad()">CALCULAR EDAD</button></p>
+        <p>Resultado:</p>
+        <p id="resultado"></p>
+        <script>
+            function calcularEdad(){
+                //tomamos la fecha ingresada en el formulario
+                var d = document.getElementById("fecha").value.split("-")
+                var fec = new Date(d);
+                var dia = fec.getDate();
+                var mes = fec.getMonth();
+                var anio = fec.getFullYear();
+                // usamos la fecha actual para comparar
+                var fec_actual = new Date() ;
+                var fec_dia = fec_actual.getDate();
+                var fec_mes = fec_actual.getMonth();
+                var fec_anio = fec_actual.getFullYear();
+                //calculo la edad
+                var edad = fec_anio - anio
+                if (mes == fec_mes && dia > fec_dia) {
+                    edad = edad-1
+                } else if (mes > fec_mes) {
+                    edad = edad-1
+                }
+                //controlo que sea mayor de edad y muestro
+                if (edad >= 18) {
+                    document.getElementById("resultado").innerHTML = edad + " AÑOS - ES MAYOR DE EDAD";
+                } else if (!isNaN(edad)) {
+                    document.getElementById("resultado").innerHTML = edad +" AÑOS - ES MENOR DE EDAD";
+                } else{
+                    alert("ingrese una fecha valida")
+                }
+            }
+        </script>
+        </body>
+</html>

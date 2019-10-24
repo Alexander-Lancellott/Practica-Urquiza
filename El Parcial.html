@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="UTF-8">
+       <title>Practica 2 prueba </title>
+   </head>
+   <body>
+        <script type="text/javascript">
+	      
+            var miArray = []
+            var j = c = 0
+            var promedio = 0
+            var suma2 = 0
+           do{
+                var valores =Number(prompt("Ingrese los valores"))
+                 if(valores !== 0 && valores < 100){
+                    j++
+                    miArray.unshift(valores)
+                } else if(valores >= 100 ){
+                    miArray.push(valores)
+                    var suma = miArray[j]
+                    suma2 += suma
+                    c++
+                    j++
+                }else if(isNaN(valores)) {
+                    alert("No es un Numero")
+                }
+            } while(valores !== 0)
+            if(c !== 0){
+                promedio = suma2 / c
+            } else {
+                promedio = "No hay valores"
+            }
+            var fecha = new Date(),
+            date = fecha.getDate(),
+            month = fecha.getMonth(),
+            year = fecha.getFullYear();
+            month ++
+            alert("Fecha Actual: "+date+"/"+month+"/"+year+
+                "\nResultante: "+miArray.join("-")+
+                "\nLongitud Array: "+miArray.length+
+                "\nPromedio de los N° menores e iguales a 100: "+ promedio
+            )
+        </script>
+        </body>
+</html>

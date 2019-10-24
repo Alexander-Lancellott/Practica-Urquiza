@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UFT-8">
+    <title>Practica 5</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var symbol = " - "
+        var resultado = ""
+        do {
+            var cadena = prompt("Ingrese la cadena de texto")
+            if (cadena !== null && resultado == ""){
+                resultado = resultado + cadena
+            } else if (cadena !== null){
+                resultado = resultado + "-" + cadena 
+            }
+        } while (cadena !== null)
+        alert(resultado)
+    </script>
+</body>
+
+</html>

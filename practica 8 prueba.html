@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="UTF-8">
+       <title>Practica 2 prueba </title>
+   </head>
+   <body>
+        <script type="text/javascript">
+	        /*Cargar en un array 5 valores aleatorios comprendidos entre 1 y 1000. 
+	        Extraer los dos últimos elementos, sumarlos y mostrarlos. 
+	        Por último, mostrar el contenido final del array.*/
+		    var elementos = [];
+		
+		    for(var i=0;i<5;i++){
+			    var nAleatorio = parseInt(Math.random()*1000)+1;
+			    elementos[i] = nAleatorio;
+		    }
+		    var arrayOriginal= elementos.join(" - ")
+		    var ultimo = elementos.pop();
+		    var penultimo = elementos.pop();
+		    var arrayFinal = elementos
+	
+		    document.write("Array Original: " + arrayOriginal + "<br>");
+		    document.write("Ultimo número: " + parseInt(ultimo) + "<br>");
+		    document.write("Penúltimo número: " + parseInt(penultimo) + "<br>");
+		    document.write("Suma: " + (ultimo + penultimo) + "<br>");
+		    document.write("Array Final: " + arrayFinal);
+	</script>
+        </script>
+        </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>HOLA</title>
+		<button onclick="recargar()">sjdjasd</button>
+	</head>
+	<body>
+		<h1></h1>
+		<script type="text/javascript">
+			const recargar = () => {
+				window.location.reload();
+			}
+			var x;
+			for (x=1; x <=500; x++){
+				document.write (x);
+				if (x % 4 == 0){
+				document.write(" (multiplo de 4)");
+				}
+				if (x % 9 == 0) {
+				document.write(" (multiplo de 9)");
+				}
+				document.write("<br>");
+				if(x % 5 == 0) {
+				document.write("<hr>");
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>HOLA</title>
+		<button onclick="recargar()">sjdjasd</button>
+		<text input id=name></text>
+	</head>
+	<body>
+		<h1 id="root"></h1>
+		<script type="text/javascript">
+			const recargar = () => {
+				window.location.reload();
+			}
+			var nombre = prompt("Ingrese el nombre del alumano");
+			var suma = 0
+			var promedio = 0
+			var c = -1
+			do {
+				var notas = Number(prompt("Ingrese las notas (para terminar no ingresar valor)" ));
+				c ++;
+				suma = suma + notas;
+			} while (notas !== 0)
+			promedio = suma / c;
+			if (promedio > 0 && promedio <= 3){
+				alert("Muy deficiente: " + promedio)
+			} else if (promedio > 3  && promedio <= 5){
+				alert("Insuficiente: " + promedio)
+			} else if (promedio > 5  && promedio <= 6){
+				alert("Suficiente: " + promedio)
+			} else if (promedio > 6  && promedio <= 7){
+				alert("Bien: " + promedio)
+			} else if (promedio > 7  && promedio <= 9){
+				alert("Notable: " + promedio)
+			} else if (promedio > 9  && promedio <= 10){
+				alert("Sobresaliente: " + promedio)
+			}
+		</script>
+	</body>
+	

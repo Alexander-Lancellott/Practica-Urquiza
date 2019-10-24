@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <title>HOLA</title>
+	</head>
+	<body>
+		<table></table>
+		<script type="text/javascript">
+            var i,j
+            var filas = Number(prompt("Introduce numero de filas"));
+            var colum = Number(prompt("Introduce numero de columnas"));
+            var res = filas * colum;
+            document.write("<table border>");
+            for (i = 0; i < filas; i++) {
+                document.write("<tr>")
+                for (j = 0; j < colum; j++) {
+                    document.write("<td>");
+                    document.write(res);
+                    res--;
+                    document.write("</td>");
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+		</script>
+	</body>
+</html>

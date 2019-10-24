@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>HOLA</title>
+	</head>
+	<body>
+		<h1 id="root"></h1>
+		<script type="text/javascript">
+            function fecha(dia,mes,anio){
+				switch (mes) {
+					case 1:mes='enero '; break;
+					case 2:mes='febrero '; break;
+					case 3:mes='marzo '; break;
+					case 4:mes='abril '; break;
+					case 5:mes='mayo '; break;
+					case 6:mes='junio '; break;
+					case 7:mes='julio '; break;
+					case 8:mes='agosto '; break;
+					case 9:mes='septiembre '; break;
+					case 10:mes='octubre '; break;
+					case 11:mes='noviembre '; break;
+					case 12:mes='diciembre '; break;
+				} //fin del switch
+				var f= 'Hoy es '+dia+' de '+mes+'de '+anio;
+				return f;
+			}
+
+
+
+            do{
+                var d = parseInt(prompt('Ingrese el día:'));
+			    var m = Number(prompt('Ingrese el mes:'));
+			    var a = parseInt(prompt('Ingrese el año:'));
+                
+            }while (isNaN(d) || isNaN(m) || isNaN(a))
+            alert(fecha(d,m,a));
+
+
+        </script>
+	</body>
+</html>

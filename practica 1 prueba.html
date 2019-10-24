@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="UTF-8">
+       <title>Practica 1 prueba </title>
+   </head>
+   <body>
+        <script type="text/javascript">     
+            var sump = 0,
+                ceros = 0,
+                prom = 0
+                sumn = 0
+            ;
+            do{
+                var cantidad = parseInt(prompt("Ingrese la cantidad de valores"))
+                if(cantidad <= 0){
+                    alert("No tiene permitido ingresar 0")
+                } else if (isNaN(cantidad)) {
+                    alert("Ingrese solo la cantidad en formato de numeros")
+                }
+            } while(cantidad <= 0 || isNaN(cantidad))
+            for(i=0; i <  cantidad; i++){
+                var valores = Number(prompt("Ingrese un valor"))
+                if (valores == 0){
+                    ceros ++
+                } else if( valores < 0){
+                    sumn = sumn + valores
+                } else {
+                    sump = sump + valores
+                    prom = sump / cantidad
+                }
+            } 
+           
+            alert ("Cantidad de ceros: " + ceros +
+            "\nPromedio de valores positvos: " + prom +
+            "\nSuma de valores negativos: " + sumn
+            ) 
+
+
+        </script>
+    </body>
+</html>

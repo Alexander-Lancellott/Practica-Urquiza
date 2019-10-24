@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>HOLA</title>
+	</head>
+	<body>
+		<h1 id="root"></h1>
+		<script type="text/javascript">
+        function polaridad(numero){
+           if (numero == 0){
+               return "Neutro"
+            } else if (numero % 2 == 0){
+                return "Par"
+            } else {
+                return "Impar"
+            }  
+        }
+        do{
+            var N = parseInt(prompt("Ingrese un Numero"))
+            if(N !== undefined && N !== "" && !isNaN(N)){
+            alert("El N° es: "+ polaridad(N))
+            } else {
+                alert("Ingrese un Numero entero")
+            }
+        } while (isNaN(N))
+        </script>
+	</body>
+</html>
