@@ -1,0 +1,73 @@
+﻿/* Se acomodo el fomulario y se le dio estilo */
+form {
+    margin: 0 auto;
+    width: 45%;
+    padding: 1em;
+    border: 0.5vw solid rgb(0, 0, 0);
+    border-radius: 2vw;
+    background-color:rgb(188, 213, 241)
+}
+
+/* Se acomodaron los campos de texto y se le dio una fuente*/
+label {
+    width: 10vw;
+    text-align:right;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.3vw;
+    padding:1vw;
+}
+
+input {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif 1em sans-serif;
+    font-size: 1.3vw;
+    width:15vw;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 0.15vw solid black;
+}
+
+/* Se acomodaron los campos selecionables y el boton al cual se le dio estilo*/
+#pago p input {
+    width:2vw;
+}
+
+#envio p input{
+    width:2vw;
+}
+
+.boton {
+    border:  solid rgba(12, 14, 17, 0);
+    margin-left: 24vw;
+}
+
+#boton {
+padding:0.8vw;
+text-align: center;
+color:white; 
+background: rgb(66, 50, 105)
+}
+
+#boton:hover{
+    cursor:pointer;
+}
+ 
+input:focus {
+    border-color: #000;
+}
+
+legend {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5vw;
+}
+
+fieldset {
+    padding: 2.5Vw;
+    border: 0.2vw solid rgb(66, 50, 105)
+}
+
+input[type='radio'] {
+    width: 15px;
+    height: 15px;
+}
+

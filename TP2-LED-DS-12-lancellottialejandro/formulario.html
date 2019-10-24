@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sur Computacion</title>
+  <link rel="stylesheet" type="text/css" href="CSS/formulario.css">
+  <link rel="shortcut icon" href="imagenes/SUR.ico"> 
+  <meta name="viewport" content="width=divice-width, initial-scale=1">
+</head>
+<body background="imagenes/background.jpg">
+  <!--Se realizo un formulario el cual por el momento no realiza ninguna accion de envio-->
+  <form action="#" name="formulario"  onsubmit="return validacion()" id="form1">
+    <!--Se creo una subdivicion para rellenar los datos necesarios para la facturacion y el envio.-->
+    <fieldset id="facturacion">
+      <legend>FACTURACION Y ENVÍO</legend>
+      <p> <label><input type="text" name="name_control" placeholder="Nombre*" id="nombre" onkeypress="return permite(event, 'car')" onpaste ="return false"></label> <label><input type="text" name="last name_control" placeholder="Apellido*" id="lastname" onkeypress="return permite(event,'car')" onpaste ="return false"></label> </p>
+      <!--Se creo una lista seleccionable para limitar las provincias solo a Argentina.-->
+      <p><label><input type="search" autofocus list="Provincia" name="list_control" placeholder="Provincia*" id="Prov"></label></p>
+      <datalist id="Provincia">
+        <option  value="Buenos Aires"></option>
+        <option  value="Catamarca"></option>
+        <option  value="Chaco"></option>
+        <option  value="Chubut"></option>
+        <option  value="Córdoba"></option>
+        <option  value="Corrientes"></option>
+        <option  value="Entre Ríos"></option>
+        <option  value="Formosa"></option>
+        <option  value="Jujuy"></option>
+        <option  value="La Pampa"></option>
+        <option  value="La Rioja"></option>
+        <option  value="Mendoza"></option>
+        <option  value="Misiones"></option>
+        <option  value="Neuquén"></option>
+        <option  value="Río Negro"></option>
+        <option  value="Salta"></option>
+        <option  value="San Juan"></option>
+        <option  value="San Luis"></option>
+        <option  value="Santa Cruz"></option>
+        <option  value="Santa Fe"></option>
+        <option  value="Santiago del Estero"></option>
+        <option  value="Tierra del Fuego"></option>
+        <option  value="Tucumán"></option>
+      </datalist> 
+      <p><label> <input type="text" name="localidad / ciudad" placeholder="Localidad / Ciudad*" id="localidad"> </label></p>
+      <p><label> <input type="text" name="direccion" placeholder="Dirección*" id="dir"> </label></p>
+      <p><label> <input type="text" name="codigo postal" placeholder="Código postal*" id = "cod"> </label></p>
+      <p><label><input type="tel" name="tel_control" placeholder="Teléfono*" id="tel" onkeypress="return permite(event,'num')" onpaste ="return false"> </label></p>
+      <p><label><input type="email"  name="email_control" placeholder="Correo Electrónico*" id="email"> </label></p>
+      <p><label> <input type="number" name="DNI_control" placeholder="DNI*" onkeypress="return permite(event,'num')" id= "DNI" onpaste ="return false"></label></p>
+    </fieldset>
+    <!--Se creo otro campo que permite seleccionar el tipo de envio.-->
+    <fieldset id="envio">
+      <legend>ENVÍO</legend>
+      <p><label id="envio"> <input type="radio" name="envio" value="retirar" id="En"> Retirar en el local: $0,00</label></p>
+      <p><label id="envio"> <input type="radio" name="envio" value="envio" id="En2"> Envío por correo: $0,00</label></p>
+    </fieldset>
+    <!--Se creo otro campo que permite seleccionar el metodo de pago.-->
+    <fieldset id="pago">
+        <legend>FORMA DE PAGO</legend>
+        <p><label> <input type="radio" name="pago" value="transferencia"> Transferencia bancaria</label></p>
+        <p><label> <input type="radio" name="pago" value="efectivo"> Efectivo en el local</label></p>
+        <p><label> <input type="radio" name="pago" value="mercado pago"> Mercado Pago</label></p>
+    </fieldset>
+      <!--Se creo otro campo el cual contiene el boton de enviar.-->
+      <fieldset class="boton">
+        <p><label><input type="submit" value="ENVIAR" id="boton" form="form1"></label></p>
+      </fieldset>
+  </form>
+  <script type="text/javascript" src="script/formulario.js"></script>
+</body>
+
