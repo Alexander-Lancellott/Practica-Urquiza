@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>HOLA</title>
-	</head>
-	<body>
-		<h1 id="root"></h1>
-		<script type="text/javascript">
-			const diameter = prompt('Ingrese el Diametro');
-			const thickness = prompt('Ingrese el Grosor');
-			if (!isNaN(Number(diameter)) && !isNaN(Number(thickness))) {
-				if ((diameter > 1.4 && thickness < 0.4)
-				|| (diameter <= 1.4 && diameter > 0.8
-				&& thickness < 0.25)) {
-					alert('el grosor para esta rueda es inferior al recomendado');
-				} else if (diameter > 1.4) {
-					alert('la rueda es para un vehiculo grande');
-				} else if (diameter <= 1.4 && diameter > 0.8) {
-					alert('la rueda es para un vehiculo mediano');
-				} else {
-					alert('la rueda es para un vehiculo pequeña');
-				}
-			} else {
-				alert('INGRESE SOLO NUMEROS');
-			}
-		</script>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>HOLA</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const diameter = prompt("Ingrese el Diametro");
+      const thickness = prompt("Ingrese el Grosor");
+      if (!isNaN(diameter) && !isNaN(thickness)) {
+        if (
+          (diameter > 1.4 && thickness < 0.4) ||
+          (diameter <= 1.4 && diameter > 0.8 && thickness < 0.25)
+        ) {
+          alert("el grosor para esta rueda es inferior al recomendado");
+        } else if (diameter > 1.4) {
+          alert("la rueda es para un vehiculo grande");
+        } else if (diameter <= 1.4 && diameter > 0.8) {
+          alert("la rueda es para un vehiculo mediano");
+        } else {
+          alert("la rueda es para un vehiculo pequeño");
+        }
+      } else {
+        alert("INGRESE SOLO NUMEROS");
+      }
+    </script>
+  </body>
 </html>
