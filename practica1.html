@@ -7,20 +7,23 @@
 	<body>
 		<h1 id="root"></h1>
 		<script type="text/javascript">
-		var diametro = Number(prompt("Ingrese Diametro"));
-		var grosor = Number(prompt("Ingrese Grosor"));
-		if(diametro > 1.4){
-			alert("la rueda es para un vehiculo grande")
-		} else if(diametro <= 1.4 && diametro > 0.8){
-			alert("la rueda es para un vehiculo mediano")
-		} else {
-			alert("la rueda es para un vehiculo pequeña")
-		}
-		if(diametro > 1.4 && grosor < 0.4 ||
-		diametro <= 1.4 && diametro > 0.8 &&
-		grosor < 0.25 ){
-			alert("el grosor para esta rueda es inferior al recomendado")
-		}
+			const diameter = prompt('Ingrese el Diametro');
+			const thickness = prompt('Ingrese el Grosor');
+			if (!isNaN(Number(diameter)) && !isNaN(Number(thickness))) {
+				if ((diameter > 1.4 && thickness < 0.4)
+				|| (diameter <= 1.4 && diameter > 0.8
+				&& thickness < 0.25)) {
+					alert('el grosor para esta rueda es inferior al recomendado');
+				} else if (diameter > 1.4) {
+					alert('la rueda es para un vehiculo grande');
+				} else if (diameter <= 1.4 && diameter > 0.8) {
+					alert('la rueda es para un vehiculo mediano');
+				} else {
+					alert('la rueda es para un vehiculo pequeña');
+				}
+			} else {
+				alert('INGRESE SOLO NUMEROS');
+			}
 		</script>
 	</body>
 </html>
