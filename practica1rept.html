@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>HOLA</title>
-		<button onclick="recargar()">sjdjasd</button>
-		<text input id=name></text>
-	</head>
-	<body>
-		<h1 id="root"></h1>
-		<script type="text/javascript">
-			const recargar = () => {
-				window.location.reload();
-			}
-			var nombre = prompt("Ingrese el nombre del alumano");
-			var suma = 0
-			var promedio = 0
-			var c = -1
-			do {
-				var notas = Number(prompt("Ingrese las notas (para terminar no ingresar valor)" ));
-				c ++;
-				suma = suma + notas;
-			} while (notas !== 0)
-			promedio = suma / c;
-			if (promedio > 0 && promedio <= 3){
-				alert("Muy deficiente: " + promedio)
-			} else if (promedio > 3  && promedio <= 5){
-				alert("Insuficiente: " + promedio)
-			} else if (promedio > 5  && promedio <= 6){
-				alert("Suficiente: " + promedio)
-			} else if (promedio > 6  && promedio <= 7){
-				alert("Bien: " + promedio)
-			} else if (promedio > 7  && promedio <= 9){
-				alert("Notable: " + promedio)
-			} else if (promedio > 9  && promedio <= 10){
-				alert("Sobresaliente: " + promedio)
-			}
-		</script>
-	</body>
-	
+  <head>
+    <meta charset="utf-8" />
+    <title>Practica 1 Rept</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const name = prompt("Ingrese el nombre del alumano");
+      let sum = 0;
+      let average = 0;
+      let accountant = -1;
+      let note;
+      if (isNaN(name)) {
+        do {
+          note = prompt("Ingrese las notas (para terminar no ingresar valor)");
+          if (!isNaN(note)) {
+            note = Number(note);
+            accountant++;
+            sum += note;
+          } else {
+            alert("Ingrese solo Numeros");
+          }
+        } while (note !== 0);
+        average = sum / accountant;
+        if (average <= 10) {
+          if (average > 0 && average <= 3) {
+            alert(`${name} tiene un: Muy deficiente (${average})`);
+          } else if (average > 3 && average <= 5) {
+            alert(`${name} tiene un: Insuficiente (${average})`);
+          } else if (average > 5 && average <= 6) {
+            alert(`${name} tiene un: Suficiente (${average})`);
+          } else if (average > 6 && average <= 7) {
+            alert(`${name} tiene un: Bien (${average})`);
+          } else if (average > 7 && average <= 9) {
+            alert(`${name} tiene un: Notable (${average})`);
+          } else if (average > 9 && average <= 10) {
+            alert(`${name} tiene un: Sobresaliente (${average})`);
+          }
+        } else {
+          alert("El promedio no es valido");
+        }
+      } else {
+        alert("Ingrese solo Letras");
+      }
+    </script>
+  </body>
+</html>
