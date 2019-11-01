@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Practica 2</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const year = prompt("Ingrese un año");
+      if (!isNaN(year)) {
+        if (year % 4 === 0 && year % 400 === 0 && year % 100 !== 100) {
+          alert("ES BISIESTO");
+        } else {
+          alert("NO ES BISIESTO");
+        }
+      } else {
+        alert("Ingrese solo un Numero");
+      }
+    </script>
+  </body>
+</html>
