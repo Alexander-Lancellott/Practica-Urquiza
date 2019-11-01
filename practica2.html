@@ -6,12 +6,33 @@
   </head>
   <body>
     <script type="text/javascript">
-      const year = prompt("Ingrese un año");
-      if (!isNaN(year)) {
-        if (year % 4 === 0 && year % 400 === 0 && year % 100 !== 100) {
-          alert("ES BISIESTO");
-        } else {
-          alert("NO ES BISIESTO");
+      let waterMotor = prompt("Ingrese el tipo de motor(1,2,3,4)");
+      if (!isNaN(waterMotor)) {
+        waterMotor = Number(waterMotor);
+        switch (waterMotor) {
+          case 0: {
+            alert("No hay establecido un valor definido para el tipo de bomba");
+            break;
+          }
+          case 1: {
+            alert("La bomba es una bomba de agua");
+            break;
+          }
+          case 2: {
+            alert("La bomba es una bomba de nafta");
+            break;
+          }
+          case 3: {
+            alert("La bomba es una bomba de biomasa");
+            break;
+          }
+          case 4: {
+            alert("La bomba es una bomba de biodiesel");
+            break;
+          }
+          default: {
+            alert("No existe un valor válido para el tipo de bomba");
+          }
         }
       } else {
         alert("Ingrese solo un Numero");
