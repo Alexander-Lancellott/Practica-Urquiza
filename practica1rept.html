@@ -8,34 +8,33 @@
     <script type="text/javascript">
       const name = prompt("Ingrese el nombre del alumano");
       let sum = 0;
-      let average = 0;
-      let accountant = -1;
-      let note;
+      let counter = -1;
+      let grade;
       if (isNaN(name)) {
         do {
-          note = prompt("Ingrese las notas (para terminar no ingresar valor)");
-          if (!isNaN(note)) {
-            note = Number(note);
-            accountant++;
-            sum += note;
+          grade = prompt("Ingrese las notas (para terminar no ingresar valor)");
+          if (!isNaN(grade)) {
+            grade = Number(grade);
+            counter++;
+            sum += grade;
           } else {
             alert("Ingrese solo Numeros");
           }
-        } while (note !== 0);
-        average = sum / accountant;
-        if (average <= 10) {
-          if (average > 0 && average <= 3) {
-            alert(`${name} tiene un: Muy deficiente (${average})`);
-          } else if (average > 3 && average <= 5) {
-            alert(`${name} tiene un: Insuficiente (${average})`);
-          } else if (average > 5 && average <= 6) {
-            alert(`${name} tiene un: Suficiente (${average})`);
-          } else if (average > 6 && average <= 7) {
-            alert(`${name} tiene un: Bien (${average})`);
-          } else if (average > 7 && average <= 9) {
-            alert(`${name} tiene un: Notable (${average})`);
-          } else if (average > 9 && average <= 10) {
-            alert(`${name} tiene un: Sobresaliente (${average})`);
+        } while (grade !== 0);
+        const percentage = sum / counter;
+        if (percentage <= 10) {
+          if (percentage > 0 && percentage <= 3) {
+            alert(`${name} tiene un: Muy deficiente (${percentage})`);
+          } else if (percentage > 3 && percentage <= 5) {
+            alert(`${name} tiene un: Insuficiente (${percentage})`);
+          } else if (percentage > 5 && percentage <= 6) {
+            alert(`${name} tiene un: Suficiente (${percentage})`);
+          } else if (percentage > 6 && percentage <= 7) {
+            alert(`${name} tiene un: Bien (${percentage})`);
+          } else if (percentage > 7 && percentage <= 9) {
+            alert(`${name} tiene un: Notable (${percentage})`);
+          } else if (percentage > 9 && percentage <= 10) {
+            alert(`${name} tiene un: Sobresaliente (${percentage})`);
           }
         } else {
           alert("El promedio no es valido");
