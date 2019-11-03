@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Practica 2 Rept</title>
-  </head>
-  <body>
-    <p id="paragraph"></p>
-    <script type="text/javascript">
-      let number;
-      const paragraph = document.getElementById("paragraph");
-      for (number = 1; number <= 500; number++) {
-        paragraph.insertAdjacentHTML("beforebegin", number);
-        if (number % 4 === 0) {
-          paragraph.insertAdjacentHTML("beforebegin", " (multiplo de 4)");
-        }
-        if (number % 9 === 0) {
-          paragraph.insertAdjacentHTML("beforebegin", " (multiplo de 9)");
-        }
-        paragraph.insertAdjacentHTML("beforebegin", "<br>");
-        if (number % 5 === 0) {
-          paragraph.insertAdjacentHTML("beforebegin", "<hr>");
-        }
+
+<head>
+  <meta charset="utf-8" />
+  <title>Practica 2 Rept</title>
+</head>
+
+<body>
+  <p id="paragraph"></p>
+  <script type="text/javascript">
+    const paragraph = document.getElementById("paragraph");
+    for (number = 1; number <= 500; number++) {
+      paragraph.insertAdjacentText("beforebegin", number);
+      if (number % 4 === 0) {
+        paragraph.insertAdjacentText("beforebegin", " (multiplo de 4)");
       }
-    </script>
-  </body>
+      if (number % 9 === 0) {
+        paragraph.insertAdjacentText("beforebegin", " (multiplo de 9)");
+      }
+      paragraph.insertAdjacentHTML("beforebegin", "<br>");
+      if (number % 5 === 0) {
+        paragraph.insertAdjacentHTML("beforebegin", "<hr>");
+      }
+    }
+  </script>
+</body>
+
 </html>
