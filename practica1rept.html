@@ -14,30 +14,33 @@
         do {
           grade = prompt("Ingrese las notas (para terminar no ingresar valor)");
           if (!isNaN(grade)) {
-            grade = Number(grade);
             counter++;
-            sum += grade;
+            sum += Number(grade);
           } else {
             alert("Ingrese solo Numeros");
           }
-        } while (grade !== 0);
+        } while (grade !== null);
         const percentage = sum / counter;
-        if (percentage <= 10) {
-          if (percentage > 0 && percentage <= 3) {
-            alert(`${name} tiene un: Muy deficiente (${percentage})`);
-          } else if (percentage > 3 && percentage <= 5) {
-            alert(`${name} tiene un: Insuficiente (${percentage})`);
-          } else if (percentage > 5 && percentage <= 6) {
-            alert(`${name} tiene un: Suficiente (${percentage})`);
-          } else if (percentage > 6 && percentage <= 7) {
-            alert(`${name} tiene un: Bien (${percentage})`);
-          } else if (percentage > 7 && percentage <= 9) {
-            alert(`${name} tiene un: Notable (${percentage})`);
-          } else if (percentage > 9 && percentage <= 10) {
-            alert(`${name} tiene un: Sobresaliente (${percentage})`);
+        if (!isNaN(percentage)) {
+          if (percentage <= 10) {
+            if (percentage >= 0 && percentage <= 3) {
+              alert(`${name} tiene un: Muy deficiente (${percentage})`);
+            } else if (percentage > 3 && percentage <= 5) {
+              alert(`${name} tiene un: Insuficiente (${percentage})`);
+            } else if (percentage > 5 && percentage <= 6) {
+              alert(`${name} tiene un: Suficiente (${percentage})`);
+            } else if (percentage > 6 && percentage <= 7) {
+              alert(`${name} tiene un: Bien (${percentage})`);
+            } else if (percentage > 7 && percentage <= 9) {
+              alert(`${name} tiene un: Notable (${percentage})`);
+            } else if (percentage > 9 && percentage <= 10) {
+              alert(`${name} tiene un: Sobresaliente (${percentage})`);
+            }
+          } else {
+            alert("El promedio no es valido");
           }
         } else {
-          alert("El promedio no es valido");
+          alert(`No se ha ingresado una nota del alumno: ${name}`);
         }
       } else {
         alert("Ingrese solo Letras");
