@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
-    <head>
-     <meta charset ="UFT-8"> 
-     <title>Practica 4</title>
-    </head>
-    <body>
-        <script type="text/javascript">
-            for (x=1; x<=6; x++){
-                document.write("<h"+ x +">Encabezado de nivel "+ x +"</h"+ x +">")
-            }
-        </script>
-    </body>
+
+<head>
+    <meta charset="UFT-8">
+    <title>Practica 4 Rept</title>
+</head>
+
+<body>
+    <p id="paragraph"></p>
+    <script type="text/javascript">
+        const paragraph = document.getElementById("paragraph");
+        for (headings = 1; headings <= 6; headings++) {
+            paragraph.insertAdjacentHTML("beforebegin", `<h${headings}>Encabezado de nivel ${headings}</h${headings}>`);
+        }
+    </script>
+</body>
+
 </html>
