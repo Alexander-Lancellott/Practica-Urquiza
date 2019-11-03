@@ -1,50 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Practica 1 Rept</title>
-  </head>
-  <body>
-    <script type="text/javascript">
-      const name = prompt("Ingrese el nombre del alumano");
-      let sum = 0;
-      let counter = -1;
-      let grade;
-      if (isNaN(name)) {
-        do {
-          grade = prompt("Ingrese las notas (para terminar no ingresar valor)");
-          if (!isNaN(grade)) {
+
+<head>
+  <meta charset="utf-8" />
+  <title>Practica 1 Rept</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    const name = prompt("Ingrese el nombre del alumano");
+    let sum = 0;
+    let counter = 0;
+    let grade;
+    if (isNaN(name) && name !== null) {
+      do {
+        grade = prompt("Ingrese las notas (para finalizar pulse cancelar)");
+        if (!isNaN(grade) && grade !== null) {
+          if (grade.trim() !== "") {
             counter++;
             sum += Number(grade);
           } else {
-            alert("Ingrese solo Numeros");
+            alert("No se ha ingresado una nota")
           }
-        } while (grade !== null);
-        const percentage = sum / counter;
-        if (!isNaN(percentage)) {
-          if (percentage <= 10) {
-            if (percentage >= 0 && percentage <= 3) {
-              alert(`${name} tiene un: Muy deficiente (${percentage})`);
-            } else if (percentage > 3 && percentage <= 5) {
-              alert(`${name} tiene un: Insuficiente (${percentage})`);
-            } else if (percentage > 5 && percentage <= 6) {
-              alert(`${name} tiene un: Suficiente (${percentage})`);
-            } else if (percentage > 6 && percentage <= 7) {
-              alert(`${name} tiene un: Bien (${percentage})`);
-            } else if (percentage > 7 && percentage <= 9) {
-              alert(`${name} tiene un: Notable (${percentage})`);
-            } else if (percentage > 9 && percentage <= 10) {
-              alert(`${name} tiene un: Sobresaliente (${percentage})`);
-            }
-          } else {
-            alert("El promedio no es valido");
+        } else if (grade !== null) {
+          alert("Ingrese solo Numeros");
+        }
+      } while (grade !== null);
+      const percentage = sum / counter;
+      if (!isNaN(percentage)) {
+        if (percentage <= 10) {
+          if (percentage >= 0 && percentage <= 3) {
+            alert(`${name} tiene un: Muy deficiente (${percentage})`);
+          } else if (percentage > 3 && percentage <= 5) {
+            alert(`${name} tiene un: Insuficiente (${percentage})`);
+          } else if (percentage > 5 && percentage <= 6) {
+            alert(`${name} tiene un: Suficiente (${percentage})`);
+          } else if (percentage > 6 && percentage <= 7) {
+            alert(`${name} tiene un: Bien (${percentage})`);
+          } else if (percentage > 7 && percentage <= 9) {
+            alert(`${name} tiene un: Notable (${percentage})`);
+          } else if (percentage > 9 && percentage <= 10) {
+            alert(`${name} tiene un: Sobresaliente (${percentage})`);
           }
         } else {
-          alert(`No se ha ingresado una nota del alumno: ${name}`);
+          alert("El promedio no es valido");
         }
       } else {
-        alert("Ingrese solo Letras");
+        alert("Debe ingresar una nota y presionar aceptar por lo menos una vez")
       }
-    </script>
-  </body>
+    } else if (name !== null && name.trim() !== "") {
+      alert("Ingrese solo Letras");
+    } else {
+      alert("No se ha ingresado el nombre del alumno")
+    }
+  </script>
+</body>
+
 </html>
