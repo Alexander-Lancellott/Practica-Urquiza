@@ -8,17 +8,23 @@
 
 <body>
     <script type="text/javascript">
-        var symbol = " - "
-        var resultado = ""
+        let result = "";
+        let string;
         do {
-            var cadena = prompt("Ingrese la cadena de texto")
-            if (cadena !== null && resultado == ""){
-                resultado = resultado + cadena
-            } else if (cadena !== null){
-                resultado = resultado + "-" + cadena 
+            string = prompt("Ingrese la cadena de texto");
+            if (string !== null && result === "" && string.trim() !== "") {
+                result += string;
+            } else if (string !== null && string.trim() !== "") {
+                result += `-${string}`;
+            } else if (string !== null) {
+                alert("No se ha ingresado una cadena");
             }
-        } while (cadena !== null)
-        alert(resultado)
+        } while (string !== null);
+        if (result !== "") {
+            alert(result);
+        } else {
+            alert("No se ha ingresado una cadena");
+        }
     </script>
 </body>
 
