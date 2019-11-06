@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-        <title>HOLA</title>
-	</head>
-	<body>
-		<table></table>
-		<script type="text/javascript">
-            var i,j
-            var filas = Number(prompt("Introduce numero de filas"));
-            var colum = Number(prompt("Introduce numero de columnas"));
-            var res = filas * colum;
-            document.write("<table border>");
-            for (i = 0; i < filas; i++) {
-                document.write("<tr>")
-                for (j = 0; j < colum; j++) {
-                    document.write("<td>");
-                    document.write(res);
-                    res--;
-                    document.write("</td>");
+
+<head>
+    <meta charset="utf-8" />
+    <title>Practica 6 Rept</title>
+</head>
+
+<body id="body">
+    <table></table>
+    <script type="text/javascript">
+        const rows = prompt("Introduce numero de filas");
+        const columns = prompt("Introduce numero de columnas");
+        if (!isNaN(rows) && !isNaN(rows)) {
+            let table = "<table border>";
+            let inside = Number(rows) * Number(columns);
+            for (i = 0; i < rows; i++) {
+                table += "<tr>";
+                for (j = 0; j < columns; j++) {
+                    table += "<td>";
+                    table += inside;
+                    inside--;
+                    table += "</td>";
                 }
-                document.write("</tr>");
+                table += "</tr>";
             }
-            document.write("</table>");
-		</script>
-	</body>
+            table += "</table>";
+            document.getElementById("body").innerHTML = table;
+        } else {
+            alert("Ingrese solo numeros");
+        }
+    </script>
+</body>
+
 </html>
