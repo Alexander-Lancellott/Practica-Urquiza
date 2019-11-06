@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta charset="UFT-8">
+    <meta charset="UTF-8">
     <title>Practica 5</title>
 </head>
 
@@ -11,19 +11,19 @@
         let result = "";
         let string;
         do {
-            string = prompt("Ingrese la cadena de texto");
-            if (string !== null && result === "" && string.trim() !== "") {
-                result += string;
-            } else if (string !== null && string.trim() !== "") {
-                result += `-${string}`;
-            } else if (string !== null) {
-                alert("No se ha ingresado una cadena");
+            string = prompt("Ingrese la cadena de texto (para finalizar presione cancelar)");
+            if (string !== null) {
+                if (string.trim() === "") {
+                    alert("No se ha ingresado nada");
+                } else if (result === "") {
+                    result += string;
+                } else {
+                    result += `-${string}`;
+                }
             }
         } while (string !== null);
         if (result !== "") {
             alert(result);
-        } else {
-            alert("No se ha ingresado una cadena");
         }
     </script>
 </body>
