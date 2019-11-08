@@ -1,97 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Practica 10 Repetitiva</title>
+  <meta charset="UTF-8" />
+  <title>Practica 10 Rept</title>
 </head>
+
 <body>
-	<script>
-	do{
-		var dni= prompt("ingrerse su DNI")
-		if (dni !== null && dni.trim()==""){
-			alert("Ingrese un DNI valido")
-		}
-		else if (dni !== null && Number(dni)==dni){
-			dni = Number(dni);
-			if(dni>=0 && dni<=99999999){
-				var resto = dni % 23;
-				switch(resto) {
-                case 0:
-                    alert('Su letra de DNI es la T');
-                    break;
-                case 1:
-                    alert('Su letra de DNI es la R');
-                    break;
-                case 2:
-                    alert('Su letra de DNI es la W');
-                    break;
-                case 3:
-                    alert('Su letra de DNI es la A');
-                    break;
-                case 4:
-                    alert('Su letra de DNI es la G');
-                    break;
-                case 5:
-                    alert('Su letra de DNI es la M');
-                    break;
-                case 6:
-                    alert('Su letra de DNI es la Y');
-                    break;
-                case 7:
-                    alert('Su letra de DNI es la F');
-                    break;
-                case 8:
-                    alert('Su letra de DNI es la P');
-                    break;
-                case 9:
-                    alert('Su letra de DNI es la D');
-                    break;
-                case 10:
-                    alert('Su letra de DNI es la X');
-                    break;
-                case 11:
-                    alert('Su letra de DNI es la B');
-                    break;
-                case 12:
-                    alert('Su letra de DNI es la N');
-                    break;
-                case 13:
-                    alert('Su letra de DNI es la J');
-                    break;
-                case 14:
-                    alert('Su letra de DNI es la Z');
-                    break;
-                case 15:
-                    alert('Su letra de DNI es la S');
-                    break;
-                case 16:
-                    alert('Su letra de DNI es la Q');
-                    break;
-                case 17:
-                    alert('Su letra de DNI es la V');
-                    break;
-                case 18:
-                    alert('Su letra de DNI es la H');
-                    break;
-                case 19:
-                    alert('Su letra de DNI es la L');
-                    break;
-                case 20:
-                    alert('Su letra de DNI es la C');
-                    break;
-                case 21:
-                    alert('Su letra de DNI es la K');
-                    break;
-                case 22:
-                    alert('Su letra de DNI es la E');
-				}
-			}else{
-				alert("DNI no valido")
-			}
-		}
-	} while(dni != null);
-	</script>
+  <script type="text/javascript">
+    let dni = "";
+    const outputs = (x) => {
+      switch (x) {
+        case 0:
+          alert('Su letra de DNI es la T');
+          break;
+        case 1:
+          alert('Su letra de DNI es la R');
+          break;
+        case 2:
+          alert('Su letra de DNI es la W');
+          break;
+        case 3:
+          alert('Su letra de DNI es la A');
+          break;
+        case 4:
+          alert('Su letra de DNI es la G');
+          break;
+        case 5:
+          alert('Su letra de DNI es la M');
+          break;
+        case 6:
+          alert('Su letra de DNI es la Y');
+          break;
+        case 7:
+          alert('Su letra de DNI es la F');
+          break;
+        case 8:
+          alert('Su letra de DNI es la P');
+          break;
+        case 9:
+          alert('Su letra de DNI es la D');
+          break;
+        case 10:
+          alert('Su letra de DNI es la X');
+          break;
+        case 11:
+          alert('Su letra de DNI es la B');
+          break;
+        case 12:
+          alert('Su letra de DNI es la N');
+          break;
+        case 13:
+          alert('Su letra de DNI es la J');
+          break;
+        case 14:
+          alert('Su letra de DNI es la Z');
+          break;
+        case 15:
+          alert('Su letra de DNI es la S');
+          break;
+        case 16:
+          alert('Su letra de DNI es la Q');
+          break;
+        case 17:
+          alert('Su letra de DNI es la V');
+          break;
+        case 18:
+          alert('Su letra de DNI es la H');
+          break;
+        case 19:
+          alert('Su letra de DNI es la L');
+          break;
+        case 20:
+          alert('Su letra de DNI es la C');
+          break;
+        case 21:
+          alert('Su letra de DNI es la K');
+          break;
+        case 22:
+          alert('Su letra de DNI es la E');
+      }
+    };
+    do {
+      dni = prompt("Ingrerse su DNI");
+      if (dni !== null) {
+        if (isNaN(dni) || dni.trim() === "") {
+          alert("El DNI ingresado no es válido");
+        } else if (dni >= 0 && dni < 99999999) {
+          const remainder = dni % 23;
+          outputs(remainder);
+        }
+      }
+    } while (dni !== null);
+  </script>
 </body>
+
 </html>
