@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-        <title>Practica 8</title>
-	</head>
-	<body>
-		<table></table>
-		<script type="text/javascript">
-            var rep,i;
-            for (i=1; i < 30; i++){
-                for (rep = 0; rep <= i; rep++) {
-				    document.write(i);
-                
-                }
-			document.write("<br>");
-            }
-                    
-		</script>
-	</body>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Practica 8 Rept</title>
+</head>
+
+<body>
+	<div id="div"></div>
+	<script type="text/javascript">
+		const theNewParagraph = document.createElement('p');
+		for (i = 1; i <= 30; i++) {
+			for (j = 1; j <= i; j++) {
+				theNewParagraph.appendChild(document.createTextNode(i));
+			}
+			theNewParagraph.appendChild(document.createElement("br"));
+		}
+		document.getElementById('div').appendChild(theNewParagraph);
+	</script>
+</body>
+
 </html>
