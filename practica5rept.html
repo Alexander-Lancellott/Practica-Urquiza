@@ -2,30 +2,32 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Practica 5</title>
+  <meta charset="UTF-8" />
+  <title>Practica 5</title>
 </head>
 
 <body>
-    <script type="text/javascript">
-        let result = "";
-        let string;
-        do {
-            string = prompt("Ingrese la cadena de texto (para finalizar presione cancelar)");
-            if (string !== null) {
-                if (string.trim() === "") {
-                    alert("No se ha ingresado nada");
-                } else if (result === "") {
-                    result += string;
-                } else {
-                    result += `-${string}`;
-                }
-            }
-        } while (string !== null);
-        if (result !== "") {
-            alert(result);
+  <script type="text/javascript">
+    let result = "";
+    let string;
+    do {
+      string = prompt("Ingrese la/as cadena/as de texto (para finalizar presione cancelar)");
+      if (string !== null) {
+        if (string.trim() === "") {
+          alert("No se ha ingresado una cadena");
+        } else if (result === "") {
+          result += string;
+        } else {
+          result += `-${string}`;
         }
-    </script>
+      }
+    } while (string !== null);
+    if (result !== "") {
+      alert(result);
+    } else {
+      alert("El resultado no posee ninguna cadena de texto")
+    }
+  </script>
 </body>
 
 </html>
