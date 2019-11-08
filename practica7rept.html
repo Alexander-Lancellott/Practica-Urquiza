@@ -2,29 +2,29 @@
 <html>
 
 <head>
-	<meta charset="utf-8" />
-	<title>Practica 7 Rept</title>
+  <meta charset="UTF-8" />
+  <title>Practica 6 Rept</title>
 </head>
 
-<body id="body">
-	<script type="text/javascript">
-		let number = prompt("Ingrese un numero no mayor de 50");
-		if (isNaN(number)) {
-			alert("Ingrese solo un Numero")
-		} else if (number > 50) {
-			alert(`${number} es mayor que 50`)
-		} else {
-			let pyramid = ""
-			number++
-			for (i = 1; i < number; i++) {
-				for (repeat = 1; repeat <= br; repeat++) {
-					pyramid += repeat;
-				}
-				pyramid += "<br>";
-			}
-			document.getElementById("body").innerHTML = pyramid
-		}
-	</script>
+<body>
+  <script type="text/javascript">
+    let number = prompt("Ingrese un numero no mayor de 50");
+    if (isNaN(number)) {
+      alert("Ingrese solo un Numero")
+    } else if (number > 50) {
+      alert(`${number} es mayor que 50`)
+    } else {
+      let pyramid = ""
+      number++
+      for (i = 1; i < number; i++) {
+        for (repeat = 1; repeat <= br; repeat++) {
+          pyramid += repeat;
+        }
+        pyramid += "<br>";
+      }
+      document.getElementById("body").innerHTML = pyramid
+    }
+  </script>
 </body>
 
 </html>
