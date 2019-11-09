@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>HOLA</title>
-	</head>
-	<body>
-		<h1 id="root"></h1>
-		<script type="text/javascript">
-        function polaridad(numero){
-           if (numero == 0){
-               return "Neutro"
-            } else if (numero % 2 == 0){
-                return "Par"
-            } else {
-                return "Impar"
-            }  
-        }
-        do{
-            var N = parseInt(prompt("Ingrese un Numero"))
-            if(N !== undefined && N !== "" && !isNaN(N)){
-            alert("El N° es: "+ polaridad(N))
-            } else {
-                alert("Ingrese un Numero entero")
-            }
-        } while (isNaN(N))
-        </script>
-	</body>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Practica 1 Funciones</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    const evenOdd = (x) => {
+      const n = Number(x);
+      if (n === 0) {
+        return "Neutro";
+      } if (n % 2 === 0) {
+        return "Par";
+      }
+      return "Impar";
+    };
+    const number = prompt("Ingrese un Numero entero");
+    if (number !== null) {
+      if (number.trim() === "") {
+        alert(`No se ha ingresado nada`);
+      } else if (isNaN(number)) {
+        alert(`${number} no es un Numero`);
+      } else if (parseInt(number, 10) !== Number(number)) {
+        alert(`${number} no es Numero entero`);
+      } else {
+        alert(`El N° es: ${evenOdd(number)}`);
+      }
+    }
+  </script>
+</body>
+
 </html>
