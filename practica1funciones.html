@@ -11,23 +11,24 @@
     const evenOdd = (x) => {
       const n = Number(x);
       if (n === 0) {
-        return "Neutro";
-      } if (n % 2 === 0) {
-        return "Par";
-      }
-      return "Impar";
-    };
-    const number = prompt("Ingrese un Numero entero");
-    if (number !== null) {
-      if (number.trim() === "") {
-        alert(`No se ha ingresado nada`);
-      } else if (isNaN(number)) {
-        alert(`${number} no es un Numero`);
-      } else if (parseInt(number, 10) !== Number(number)) {
-        alert(`${number} no es Numero entero`);
+        return 'Neutro';
+      } else if (n % 2 === 0) {
+        return 'Par';
       } else {
-        alert(`El N° es: ${evenOdd(number)}`);
+        return 'Impar';
       }
+    };
+    const number = prompt('Ingrese un número entero');
+    if (number === null) {
+      alert('Acción cancelada');
+    } else if (number.trim() === '') {
+      alert('No se ha ingresado nada');
+    } else if (isNaN(number)) {
+      alert(`${number} no es un número`);
+    } else if (parseInt(number, 10) !== Number(number)) {
+      alert(`${number} no es un número entero`);
+    } else {
+      alert(`El número es: ${evenOdd(number)}`);
     }
   </script>
 </body>
