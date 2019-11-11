@@ -3,32 +3,16 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Parctica 3 Funciones</title>
+  <title>Práctica 3 Funciones</title>
 </head>
 
 <body>
   <script type="text/javascript">
-    const inputValidation = (x) => {
-      if (x === null) {
-        alert('Acción cancelada');
-        return false;
-      }
-      if (x.trim() === '') {
-        alert('No se ha ingresado nada');
-        return false;
-      }
-      if (isNaN(x)) {
-        alert('Ingrese solo numeros');
-        return false;
-      }
-      return x;
-    };
     const numbersRange = (n1, n2) => {
       const divisor = document.createElement('div');
       const paragraph = document.createElement('p');
-      let i;
       if (n1 < n2) {
-        for (i = n1; i <= n2; i++) {
+        for (let i = n1; i <= n2; i += 1) {
           const text = document.createTextNode(`${i}`);
           const lineBreak = document.createElement('br');
           paragraph.appendChild(text);
@@ -36,7 +20,7 @@
           divisor.appendChild(paragraph);
         }
       } else {
-        for (i = n1; i >= n2; i--) {
+        for (let i = n1; i >= n2; i -= 1) {
           const text = document.createTextNode(`${i}`);
           const lineBreak = document.createElement('br');
           paragraph.appendChild(text);
@@ -46,17 +30,20 @@
       }
       document.body.appendChild(divisor);
     };
-    const firstNumber = inputValidation(prompt('Ingrese el primer numero'));
-    let secondNumber;
-    if (firstNumber !== false) {
-      secondNumber = inputValidation(prompt('Ingrese el segundo numero'));
-    }
-    if (secondNumber !== false) {
-      if (firstNumber === secondNumber) {
-        alert('Ingrese numeros no iguales');
-      } else {
-        numbersRange(Number(firstNumber), Number(secondNumber));
-      }
+
+    const firstNumber = prompt('Ingrese el primer número');
+    const secondNumber = prompt('Ingrese el segundo número');
+
+    if (firstNumber === null || secondNumber === null) {
+      alert('Acción cancelada');
+    } else if (firstNumber.trim() === '' || secondNumber.trim() === '') {
+      alert('No se ha ingresado nada');
+    } else if (isNaN(firstNumber) || isNaN(secondNumber)) {
+      alert('Ingrese solo números');
+    } else if (firstNumber === secondNumber) {
+      alert('Ingrese números no iguales');
+    } else {
+      numbersRange(Number(firstNumber), Number(secondNumber));
     }
   </script>
 </body>
