@@ -1,45 +1,64 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>HOLA</title>
-	</head>
-	<body>
-		<h1 id="root"></h1>
-		<script type="text/javascript">
-        do {
-            var numer1=Number(prompt("Ingrese el Primer Numero")),
-                numer2=Number(prompt("Ingrese el Segundo Numero"))
-            ;
-            if(numer1 == numer2){
-                alert("Ingrese Numeros no Iguales")
-            }else if (isNaN(numer1) || isNaN(numer2)){
-                alert("Ingrese solo Numeros")
-            }
-        } while(numer1 == numer2 || isNaN(numer1) || isNaN(numer2))
 
+<head>
+  <meta charset="UTF-8" />
+  <title>Parctica 3 Funciones</title>
+</head>
 
-        function contaIn(valor1, valor2){
-            for(i=valor1; i <= valor2; i++){
-                document.write(i)
-                document.write("<br>")
-            }
+<body>
+  <script type="text/javascript">
+    const inputValidation = (x) => {
+      if (x === null) {
+        alert('Acción cancelada');
+        return false;
+      }
+      if (x.trim() === '') {
+        alert('No se ha ingresado nada');
+        return false;
+      }
+      if (isNaN(x)) {
+        alert('Ingrese solo numeros');
+        return false;
+      }
+      return x;
+    };
+    const numbersRange = (n1, n2) => {
+      const divisor = document.createElement('div');
+      const paragraph = document.createElement('p');
+      let i;
+      if (n1 < n2) {
+        for (i = n1; i <= n2; i++) {
+          const text = document.createTextNode(`${i}`);
+          const lineBreak = document.createElement('br');
+          paragraph.appendChild(text);
+          paragraph.appendChild(lineBreak);
+          divisor.appendChild(paragraph);
         }
-        function contaIn2(valor1, valor2){
-            for(i=valor2; i <= valor1; i++){
-                document.write(i)
-                document.write("<br>")
-            }
+      } else {
+        for (i = n1; i >= n2; i--) {
+          const text = document.createTextNode(`${i}`);
+          const lineBreak = document.createElement('br');
+          paragraph.appendChild(text);
+          paragraph.appendChild(lineBreak);
+          divisor.appendChild(paragraph);
         }
-        
-        if(numer1 < numer2){
-            contaIn(numer1, numer2)
-        } else if(numer1 > numer2){
-            contaIn2(numer1, numer2)
-        }
-        
-        
+      }
+      document.body.appendChild(divisor);
+    };
+    const firstNumber = inputValidation(prompt('Ingrese el primer numero'));
+    let secondNumber;
+    if (firstNumber !== false) {
+      secondNumber = inputValidation(prompt('Ingrese el segundo numero'));
+    }
+    if (secondNumber !== false) {
+      if (firstNumber === secondNumber) {
+        alert('Ingrese numeros no iguales');
+      } else {
+        numbersRange(Number(firstNumber), Number(secondNumber));
+      }
+    }
+  </script>
+</body>
 
-        </script>
-	</body>
 </html>
