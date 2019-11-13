@@ -1,12 +1,56 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>HOLA</title>
-	</head>
-	<body>
-		<h1 id="root"></h1>
-		<script type="text/javascript">			
-        </script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Práctica 4 Funciones</title>
+  </head>
+
+  <body>
+    <script type="text/javascript">
+      const dateHandler = (d) => {
+        const months = [
+          'enero',
+          'febrero',
+          'marzo',
+          'abril',
+          'mayo',
+          'junio',
+          'julio',
+          'agosto',
+          'septiembre',
+          'octubre',
+          'noviembre',
+          'diciembre',
+        ];
+        return months[d];
+      };
+      const date = prompt('Ingrese una fecha (formato: DD/MM/AAAA)');
+      if (date !== null) {
+        const dateArray = date.split('/');
+        let day = dateArray[0];
+        let month = dateArray[1];
+        let year = dateArray[2];
+        if (date.trim() === '') {
+          alert('No se ha ingresado nada');
+        } else if (date.length !== 10 || dateArray.length !== 3) {
+          alert('Ingrese una fecha correcta (formato: DD/MM/AAAA)');
+        } else if (isNaN(day) || isNaN(month) || isNaN(year)) {
+          alert('Ingrese una fecha formada por números (ejemplo: 01/10/2019)');
+        } else if (day < 1 || day > 31) {
+          alert('El día de la fecha no pude ser menor a 1 ni mayor a 31');
+        } else if (month < 1 || month > 12) {
+          alert('El mes de la fecha no pude ser menor a 1 ni mayor a 12');
+        } else if (year < 2019) {
+          alert('El año de la fecha no pude ser menor a 2019');
+        } else {
+          day = Number(day);
+          month = dateHandler(Number(month) - 1);
+          year = Number(year);
+          alert(`Hoy es ${day} de ${month} de ${year}`);
+        }
+      } else {
+        alert('Acción cancelada');
+      }
+    </script>
+  </body>
 </html>
