@@ -1,59 +1,75 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Práctica 1 Rept</title>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <title>Practica 1 Rept</title>
-</head>
-
-<body>
-  <script type="text/javascript">
-    const name = prompt("Ingrese el nombre del alumano");
-    let sum = 0;
-    let counter = 0;
-    let grade;
-    if (isNaN(name) && name !== null) {
-      do {
-        grade = prompt("Ingrese las notas (para finalizar pulse cancelar)");
-        if (!isNaN(grade) && grade !== null) {
-          if (grade.trim() !== "") {
-            counter++;
-            sum += Number(grade);
-          } else {
-            alert("No se ha ingresado una nota")
+  <body>
+    <script type="text/javascript">
+      const inputValidation = () => {
+        let sum = 0;
+        let counter = 0;
+        let g;
+        do {
+          g = prompt('Ingrese una nota (para finalizar pulse cancelar)');
+          if (g !== null) {
+            if (g.trim() === '') {
+              alert('No se ha ingresado una nota');
+            } else if (isNaN(g)) {
+              alert('Ingrese solo números');
+            } else {
+              counter += 1;
+              sum += Number(g);
+            }
           }
-        } else if (grade !== null) {
-          alert("Ingrese solo Numeros");
+        } while (g !== null);
+        return [sum, counter];
+      };
+      const outputValidation = (output) => {
+        if (output >= 0 && output <= 3) {
+          return 'muy deficiente';
         }
-      } while (grade !== null);
-      const percentage = sum / counter;
-      if (!isNaN(percentage)) {
-        if (percentage <= 10) {
-          if (percentage >= 0 && percentage <= 3) {
-            alert(`${name} tiene un: Muy deficiente (${percentage})`);
-          } else if (percentage > 3 && percentage <= 5) {
-            alert(`${name} tiene un: Insuficiente (${percentage})`);
-          } else if (percentage > 5 && percentage <= 6) {
-            alert(`${name} tiene un: Suficiente (${percentage})`);
-          } else if (percentage > 6 && percentage <= 7) {
-            alert(`${name} tiene un: Bien (${percentage})`);
-          } else if (percentage > 7 && percentage <= 9) {
-            alert(`${name} tiene un: Notable (${percentage})`);
-          } else if (percentage > 9 && percentage <= 10) {
-            alert(`${name} tiene un: Sobresaliente (${percentage})`);
-          }
-        } else {
-          alert("El promedio no es valido");
+        if (output > 3 && output <= 5) {
+          return 'insuficiente';
         }
+        if (output > 5 && output <= 6) {
+          return 'suficiente';
+        }
+        if (output > 6 && output <= 7) {
+          return 'bien';
+        }
+        if (output > 7 && output <= 9) {
+          return 'notable';
+        }
+        return 'sobresaliente';
+      };
+      let grade;
+      let percentage;
+      const name = prompt('Ingrese el nombre del alumano');
+      if (name === null) {
+        alert('Acción cancelada');
+      } else if (name.trim() === '') {
+        alert('No se ha ingresado el nombre del alumno');
+      } else if (!isNaN(name)) {
+        alert('Ingrese solo letras');
       } else {
-        alert("Debe ingresar una nota y presionar aceptar por lo menos una vez")
+        grade = inputValidation();
+        percentage = grade[0] / grade[1];
+        if (isNaN(percentage)) {
+          alert(
+            'El promedio no es válido. Debe ingresar una nota por lo menos una vez',
+          );
+        } else if (percentage > 10) {
+          alert(
+            'El promedio no es válido. El promedio no puede ser mayor a 10',
+          );
+        } else {
+          alert(
+            `${name} tiene un ${outputValidation(percentage)} (${percentage})`,
+          );
+        }
       }
-    } else if (name !== null && name.trim() !== "") {
-      alert("Ingrese solo Letras");
-    } else {
-      alert("No se ha ingresado el nombre del alumno")
-    }
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
