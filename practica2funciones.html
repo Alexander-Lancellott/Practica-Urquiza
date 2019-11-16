@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Práctica 2 Funciones</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Parctica 2 Funciones</title>
-</head>
-
-<body>
-  <script type="text/javascript">
-    const string = prompt('Ingrese una cadena formada por letras');
-    const upperLower = (input) => {
-      if (input === input.toUpperCase()) {
-        return 'Mayúsculas';
+  <body>
+    <script type="text/javascript">
+      const string = prompt('Ingrese una cadena');
+      const stringOutput = (input) => {
+        if (input === input.toUpperCase()) {
+          return 'mayúsculas';
+        }
+        if (input === input.toLowerCase()) {
+          return 'minúsculas';
+        }
+        return 'mayúsculas y minúsculas';
+      };
+      if (string === null) {
+        alert('Acción cancelada');
+      } else if (string.trim() === '') {
+        alert('No se ha ingresado nada');
+      } else if (!isNaN(string)) {
+        alert('La cadena debe estar formada solo por letras');
+      } else {
+        alert(`La cadena está formada por ${stringOutput(string)}`);
       }
-      if (input === input.toLowerCase()) {
-        return 'Minúsculas';
-      }
-      return 'Mayúsculas Y Minúsculas';
-    };
-    if (string === null) {
-      alert('Acción cancelada');
-    } else if (string.trim() === '') {
-      alert('No se ha ingresado nada');
-    } else if (!isNaN(string)) {
-      alert('La cadena no puede estar formada por números');
-    } else {
-      alert(`La cadena esta formada por: ${upperLower(string)}`);
-    }
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

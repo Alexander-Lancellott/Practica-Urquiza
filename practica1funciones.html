@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Práctica 1 Funciones</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Practica 1 Funciones</title>
-</head>
-
-<body>
-  <script type="text/javascript">
-    const evenOdd = (x) => {
-      const n = Number(x);
-      if (n === 0) {
-        return 'Neutro';
-      } else if (n % 2 === 0) {
-        return 'Par';
+  <body>
+    <script type="text/javascript">
+      const evenOdd = (x) => {
+        const n = Number(x);
+        if (n === 0) {
+          return 'neutro';
+        }
+        if (n % 2 === 0) {
+          return 'par';
+        }
+        return 'impar';
+      };
+      const number = prompt('Ingrese un número entero');
+      if (number === null) {
+        alert('Acción cancelada');
+      } else if (number.trim() === '') {
+        alert('No se ha ingresado nada');
+      } else if (isNaN(number)) {
+        alert(`${number} no es un número`);
+      } else if (parseInt(number, 10) !== Number(number)) {
+        alert(`${number} no es un número entero`);
       } else {
-        return 'Impar';
+        alert(`El número es ${evenOdd(number)}`);
       }
-    };
-    const number = prompt('Ingrese un número entero');
-    if (number === null) {
-      alert('Acción cancelada');
-    } else if (number.trim() === '') {
-      alert('No se ha ingresado nada');
-    } else if (isNaN(number)) {
-      alert(`${number} no es un número`);
-    } else if (parseInt(number, 10) !== Number(number)) {
-      alert(`${number} no es un número entero`);
-    } else {
-      alert(`El número es: ${evenOdd(number)}`);
-    }
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
