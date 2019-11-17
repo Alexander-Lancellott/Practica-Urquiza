@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
-   <head>
-       <meta charset="UTF-8">
-       <title>Practica 2 prueba </title>
-   </head>
-   <body>
-        <script type="text/javascript">
-	        /*Cargar en un array 5 valores aleatorios comprendidos entre 1 y 1000. 
-	        Extraer los dos últimos elementos, sumarlos y mostrarlos. 
-	        Por último, mostrar el contenido final del array.*/	    
-	</script>
-        </script>
-        </body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Práctica 8 Prueba</title>
+  </head>
+
+  <body>
+    <script type="text/javascript">
+      const array = [];
+      for (let i = 0; i < 5; i++) {
+        array.push(parseInt(Math.random() * 1000, 10) + 1);
+      }
+      const originalArray = array.join('-');
+      const sum = array.pop() + array.pop();
+      alert(
+        `Array de números aleatorios: ${originalArray}\nSuma de los dos últimos elementos: ${sum}\nArray final: ${array.join(
+          '-',
+        )}`,
+      );
+    </script>
+  </body>
 </html>
